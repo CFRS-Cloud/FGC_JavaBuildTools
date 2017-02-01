@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>uk.gov.cambsfire</groupId>
+    <artifactId>build-tools</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>Build Tools</name>
+    <distributionManagement>
+        <repository>
+            <id>cfrs-aws-release</id>
+            <name>CFRS AWS Release Repository</name>
+            <url>s3://uk.gov.cambsfire.maven/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>cfrs-aws-snapshot</id>
+            <name>CFRS AWS Snapshot Repository</name>
+            <url>s3://uk.gov.cambsfire.maven/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
+    </build>
+</project>
