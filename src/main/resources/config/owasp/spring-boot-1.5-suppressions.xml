@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+  <suppress>
+    <notes><![CDATA[
+  Suppress spring security CVE's which do not affect this project
+  ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.springframework\.security/spring.*</packageUrl>
+    <cve>CVE-2018-1258</cve> <!-- spring framework 5.0.5 only -->
+    <cve>CVE-2011-2731</cve> <!-- Spring Security before 2.0.7 and 3.0.x before 3.0.6 -->
+    <cve>CVE-2016-4977</cve> <!-- Only affects whitelabel views -->
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+  Suppress dom4j CVE that is not expliotable as it only affects methods addElement, addAttribute
+  ]]></notes>
+    <packageUrl>pkg:maven/dom4j/dom4j@1.6.1</packageUrl>
+    <cve>CVE-2018-1000632</cve>
+  </suppress>
+</suppressions>
